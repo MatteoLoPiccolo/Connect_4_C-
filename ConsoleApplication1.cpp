@@ -55,18 +55,16 @@ void TakeInputsFromPlayer(int currentPlayer, char  board[6][7], int& retFlag)
 // Function to control win condition
 static bool checkWinCondition(const char board[rows][columns], char player) {
     // Check for horizontal
-    bool retFlag;
+    bool retFlag{};
     bool retVal = CheckHorizontally(board, player, retFlag);
     if (retFlag) return retVal;
 
     // Check for vertical
-    bool retFlag;
-    bool retVal = CheckVertically(board, player, retFlag);
+    retVal = CheckVertically(board, player, retFlag);
     if (retFlag) return retVal;
 
     // Check for diagonal
-    bool retFlag;
-    bool retVal = CheckDiagonally(board, player, retFlag);
+    retVal = CheckDiagonally(board, player, retFlag);
     if (retFlag) return retVal;
 
     return false;
